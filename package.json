@@ -1,0 +1,23 @@
+{
+  "name": "fecode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qingguatang/fecode.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1"
+  },
+  "author": "bencode@163.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qingguatang/fecode/issues"
+  },
+  "homepage": "https://github.com/qingguatang/fecode#readme"
+}
