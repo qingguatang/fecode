@@ -1,0 +1,26 @@
+{
+  "name": "codepen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "dev": "DEBUG=app* node dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qingguatang/codepen.git"
+  },
+  "dependencies": {
+    "ploverx": "^4.5.1"
+  },
+  "author": "bencode@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qingguatang/codepen/issues"
+  },
+  "homepage": "https://github.com/qingguatang/codepen#readme",
+  "devDependencies": {
+    "livereload": "^0.7.0"
+  }
+}
