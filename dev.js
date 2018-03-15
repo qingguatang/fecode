@@ -4,7 +4,7 @@ const livereload = require('livereload');
 
 const cmds = [
   'nodemon --inspect --watch config --watch lib --watch web app.js',
-  //'npm run webpack'
+  'npm run webpack'
 ];
 
 

@@ -2,7 +2,7 @@ const pathUtil = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const appRoot = pathUtil.join(__dirname, '../..');
+const appRoot = pathUtil.join(__dirname, '..');
 const srcPath = pathUtil.join(appRoot, 'static');
 const distPath = pathUtil.join(appRoot, 'public/g');
 
@@ -14,6 +14,7 @@ const env = process.NODE_ENV;
 
 module.exports = {
   entry: {
+    page: pathUtil.join(srcPath, 'pages/page')
   },
 
 
@@ -27,6 +28,17 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015']
+            }
+          }
+        ]
+      }
     ]
   },
 

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node app.js",
-    "dev": "DEBUG=app* node dev.js"
+    "dev": "DEBUG=app* node dev.js",
+    "webpack": "webpack --mode development --watch-stdin --progress --color --config config/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,11 @@
   },
   "homepage": "https://github.com/qingguatang/codepen#readme",
   "devDependencies": {
-    "livereload": "^0.7.0"
+    "babel-loader": "^7.1.4",
+    "copy-webpack-plugin": "^4.5.1",
+    "livereload": "^0.7.0",
+    "nodemon": "^1.17.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
   }
 }

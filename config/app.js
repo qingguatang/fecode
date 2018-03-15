@@ -36,7 +36,7 @@ exports.services = {
 exports.helpers = {
 };
 
- 
+
 /**
  * web中间件相关配置
  */
@@ -55,3 +55,20 @@ exports.web = {
     root: pathUtil.join(APP_ROOT, 'public')
   }
 };
+
+
+/**
+ * 前端资源相关配置
+ */
+exports.assets = {
+  // 只使用简单模式，前端资源主要由webpack处理
+  simple: true,
+  // 对资源进行hash重命名，适合发布到CDN等场景
+  digest: true,
+  // 资源前缀
+  prefix: '/g',
+  // 如果婺源发到CDN，则需要设置资源的URL前缀
+  //urlPrefix: 'https://cdn.static.com/hello-react/'
+};
+
+ 
