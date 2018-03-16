@@ -40,6 +40,26 @@
     }
     .top-bar {
     }
+
+    .page-header {
+      border: 1px solid red;
+      width: 1040px;
+      /* margin-left: auto;
+      margin-right: auto; */
+      margin: 0 auto;
+    }
+    .page-header .logo {
+      border: 1px solid blue;
+      float: left;
+    }
+    .page-header .main-nav {
+      border: 1px solid green;
+      float: left;
+    }
+    .page-header .search-bar {
+      border: 1px solid purple;
+      float: right;
+    }
   </style>
 
 </head>
@@ -79,10 +99,10 @@
   </ul>
   </div>
 
-  <div class="page-header">
-    <h1>LOGO</h1>
+  <div class="page-header clearfix">
+    <h1 class="logo">豆瓣 LOGO</h1>
     <div class="main-nav">导航条</div>
-    <div class="search-nav">search bar</div>
+    <div class="search-bar">search bar</div>
   </div>
 </body>
 </html>
