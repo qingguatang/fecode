@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>5.布局入门 - 块状元素和行内元素</title>
+  <style>
+    /* h1,h2,h3,h4 {
+      border: 1px solid red;
+    }
+
+    p, div {
+      border: 1px solid blue;
+    }
+
+    ul {
+      border: 1px solid purple;
+    }
+
+    li {
+      border: 1px solid green;
+    }
+
+    a {
+      border: 1px solid red;
+    }
+
+    span {
+      border: 1px solid black;
+    }
+    em {
+      border: 1px solid blue;
+    } */
+
+
+    .layout-1, .layout-2 {
+      list-style: none;
+    }
+    .layout-1 li, .layout-2 li {
+      border: 1px solid red;
+      width: 100px;
+    }
+    .layout-1:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .layout-1 li {
+      float: left;
+    }
+
+    .layout-2 li {
+      display: inline-block;
+    }
+
+    /* body,h1,h2,h3,p,ul,li {
+      margin: 0;
+      padding: 0;
+    } */
+
+    .dp span {
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>一级标题 &lt;h1&gt;</h1>
+  <h2>二级标题 &lt;h2&gt;</h2>
+  <h3>二级标题 &lt;h3&gt;</h3>
+  <div>&lt;div&gt;</div>
+
+  <p>
+    &lt;p&gt;<br>
+    笛卡尔说“我思故我在”，人类向来为自身独一无二的<em>&lt;em&gt;理解力和创造力</em>而自豪。Schmidhuber则认为，“理解”和“创造”实质上是压缩信息的过程，而美感和幽默都是不同的信息压缩方式，机器同样能够掌握。不仅如此，算法还可以自我进化，不断依据外界信息优化自己的代码，逐渐超越人类。
+
+
+    <a href="#">google 1</a>
+    <a href="#">google 2</a>
+
+    <span>&lt;span&gt;</span>
+
+    <a href="#">google 3</a>        <span>&lt;span&gt;</span>
+    <a href="#">google 4</a><span>&lt;span&gt;</span>
+
+    <img width="100" src="https://qgt-paper.oss-cn-qingdao.aliyuncs.com/upload/2018/2017030614412615589.jpg" alt="">
+    <img width="150" src="https://qgt-paper.oss-cn-qingdao.aliyuncs.com/upload/2018/2017030614412615589.jpg"
+        alt=""><img width="120" src="https://qgt-paper.oss-cn-qingdao.aliyuncs.com/upload/2018/2017030614412615589.jpg" alt="">
+  </p>
+  <p>
+    &lt;p&gt;<br>
+    我思故我在
+  </p>
+
+  <br>
+  <br>
+  <br>
+
+  <p class="dp">
+    <span>span 1</span>
+    <span>span 2</span>
+    <span style="display: block; width: 300px; height: 40px;">span 3</span>
+    <span style="width: 300px; height: 40px;">span 4</span>
+    <span style="display: list-item; margin-left: 20px;">span 5</span>
+  </p>
+
+  <ul>
+    <li>列表项 1</li>
+    <li>列表项 2</li>
+    <li>列表项 3</li>
+    <li>列表项 4</li>
+  </ul>
+
+  <!-- <a href="#">google 1</a>
+  <a href="#">google 2</a>
+  <span>&lt;span&gt;</span>
+
+  <a href="#">google 3</a>
+  <span>&lt;span&gt;</span>
+  <a href="#">google 4</a><span>&lt;span&gt;</span>
+
+  <input type="text">
+  <button>button</button> -->
+  <br>
+  <br>
+  <br>
+
+
+  <a href="#">google 1</a><br>
+  <a href="#">google 2</a>
+
+  <br>
+  <br>
+
+  <ul class="layout-1">
+    <li>&lt;li&gt;1</li>
+    <li>&lt;li&gt;2</li>
+    <li>&lt;li&gt;3</li>
+    <li>&lt;li&gt;4</li>
+  </ul>
+  
+  <ul class="layout-2">
+    <li>&lt;li&gt;1</li>
+    <li>&lt;li&gt;2</li>
+    <li>&lt;li&gt;3</li>
+    <li>&lt;li&gt;4</li>
+  </ul>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</body>
+</html>

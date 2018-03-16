@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>5.布局入门 - 盒模型</title>
+  <style>
+    .parent {
+      width: 600px;
+      padding: 50px;
+
+      background: #BBDEFB;
+      border: 30px solid #1E88E5;
+    }
+    .parent .child {
+      width: 300px;
+      height: 100px;
+      margin: 30px;
+      padding: 50px;
+
+      border: 30px solid #F4511E;
+      background: #FFCCBC;
+    }
+
+    .box-1 {
+      outline: 1px dotted red;
+      height: 100%;
+    }
+    .box-2 {
+      outline: 1px dotted red;
+      height: 100%;
+    }
+
+    span {
+      outline: 1px dotted black;
+    }
+
+    div {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="box-1">
+      <span>父容器内容</span>
+      <div class="child">
+        <div class="box-2">
+          <span>子容器A的内容</span>
+        </div>
+      </div>
+      <span>父容器内容2</span>
+    </div>
+  </div>
+</body>
+</html>
