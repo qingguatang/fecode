@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>5. 布局入门-浮动布局</title>
+
+  <style>
+    /* cssreset */
+    li {
+      list-style: none;
+    }
+    body, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .top-nav {
+      float: left;
+    }
+    .top-nav li {
+      float: left;
+      margin-left: 13px;
+      margin-right: 13px;
+    }
+
+    .user-status {
+      float: right;
+    }
+    .user-status li {
+      float: left;
+      margin: 0 13px;
+    }
+    .top-bar {
+    }
+  </style>
+
+</head>
+<body>
+  <div class="top-bar clearfix">
+  <ul class="top-nav clearfix">
+    <li>
+      <a href="#">豆瓣</a>
+    </li>
+    <li>
+      <a href="#">读书</a>
+    </li>
+    <li>
+      <a href="#">电影</a>
+    </li>
+    <li>
+      <a href="#">音乐</a>
+    </li>
+    <li>
+      <a href="#">同城</a>
+    </li>
+    <li>
+      <a href="#">小组</a>
+    </li>
+  </ul>
+
+  <ul class="user-status clearfix">
+    <li>
+      <a href="#">下载客户端</a>
+    </li>
+    <li>
+      <a href="#">提醒</a>
+    </li>
+    <li>
+      <a href="#">豆邮</a>
+    </li>
+  </ul>
+  </div>
+
+  <div class="page-header">
+    <h1>LOGO</h1>
+    <div class="main-nav">导航条</div>
+    <div class="search-nav">search bar</div>
+  </div>
+</body>
+</html>
