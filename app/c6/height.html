@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>6.布局实践 - 关于高度的使用</title>
+  <style>
+    ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    body {
+      width: 1200px;
+      margin: 10px auto;
+      line-height: 1.5;
+    }
+    .main-nav {
+      background: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+      /* padding: 3px 0; */
+    }
+    .main-nav li {
+      float: left;
+      margin: 0 10px;
+      /* padding: 3px 0; */
+    }
+    .main-nav li a  {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      /* line-height: 30px; */
+      font-size: 20px;
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+  <ul class="main-nav clearfix">
+    <li>
+      <a href="#">天猫</a>
+    </li>
+    <li>
+      <a href="#">天猫超市</a>
+    </li>
+    <li>
+      <a href="#">淘抢购</a>
+    </li>
+    <li>
+      <a href="#">电器城</a>
+    </li>
+    <li>
+      <a href="#">司法拍卖</a>
+    </li>
+    <li>
+      <a href="#">中国质造</a>
+    </li>
+    <li>
+      <a href="#">兴农扶贫</a>
+    </li>
+    <li>
+      <a href="#">智能生活</a>
+    </li>
+    <li>
+      <a href="#">苏宁易购</a>
+    </li>
+  </ul>
+</body>
+</html>
