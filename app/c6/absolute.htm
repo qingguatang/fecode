@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>6.布局实践-绝对定位</title>
+  <style>
+    ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      font-family: Helvetica,Arial,sans-serif;
+      width: 1000px;
+      margin: 50px auto;
+      padding: 50px;
+    }
+
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .main-nav li {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .main-nav li a {
+      font-size: 16px;
+      color: #072;
+      text-decoration: none;
+    }
+    .main-nav li a:hover {
+      background: #072;
+      color: #fff;
+    }
+    .main-nav .new {
+      background: #ef866d;
+      color: #fff;
+      font-size: 12px;
+
+      position: absolute;
+      right: -21px;
+      top: -11px;
+    }
+    .main-nav li {
+      position: relative;
+    }
+    li {
+      /* border: 1px solid red; */
+    }
+  </style>
+</head>
+<body>
+  <ul class="main-nav clearfix">
+    <li>
+      <a href="#">首页</a>
+      <span class="new">new</span>
+    </li>
+    <li>
+      <a href="#">我的豆瓣</a>
+    </li>
+    <li>
+      <a href="#">浏览发现</a>
+    </li>
+    <li>
+      <a href="#">话题广场</a>
+      <span class="new">new</span>
+    </li>
+    <li>
+      <a href="#">话题广场</a>
+      <span class="new">new</span>
+    </li>
+  </ul>
+  <div class="box"></div>
+</body>
+</html>
