@@ -1,0 +1,76 @@
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  padding: 20px 100px;
+}
+
+.tools {
+  width: 228px;
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.tools:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.tools li {
+  float: left;
+  width: 75px;
+  height: 70px;
+  text-align: center;
+
+  border-top: 1px solid gray;
+  border-right: 1px solid gray;
+  
+  /* margin: 10px; */
+}
+
+.tools li .icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 11px auto 3px;
+
+  border: 1px solid red;
+}
+
+.tools li a {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+
+.tools .phone-fee .icon {
+  background: url(images/01.png) no-repeat 0 0;
+  background-size: 24px;
+}
+
+.tools .travel .icon {
+  background: url(images/02.png) no-repeat 0 0;
+  background-size: 24px;
+}
+
+.tools .insurance .icon {
+  background: url(images/03.png) no-repeat 0 2px;
+  background-size: 24px;
+}
+
+.tools .game .icon {
+  background: url(images/04.png) no-repeat 0 1px / 24px;
+}
+
+.tools .lottery .icon {
+  background: url(images/05.png) no-repeat 0 0 / 24px;
+}
+
+.tools .movie .icon {
+  background: url(images/06.png) no-repeat 0 0 / 24px 24px;
+}

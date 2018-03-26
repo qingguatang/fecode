@@ -1,0 +1,43 @@
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  body {
+    width: 700px;
+    margin: 50px auto;
+    font-family: Helvetica,Arial,sans-serif;
+  }
+
+  .clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .tabs li {
+    float: left;
+    margin-right: 22px;
+  }
+  .tabs li a {
+    color: #37a;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .tabs li a:hover {
+    background:#37a;
+    color: #fff;
+  }
+
+  .tabs .talk {
+    background: url(images/01.png) no-repeat 0 3px;
+    background-size: 16px 16px;
+    padding-left: 18px;
+  }
+
+  .tabs .photo {
+    background: url(images/02.png) no-repeat 0 3px;
+    background-size: 16px 16px;
+    padding-left: 18px;
+  }
