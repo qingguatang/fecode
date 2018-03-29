@@ -1,0 +1,43 @@
+body {
+  margin: 50px 100px;
+  line-height: 1.5;
+}
+
+.clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.debug(@color:red) {
+  border: 1px solid @color;
+}
+
+.color-mixer {
+  .debug(red);
+  width: 300px;
+
+  .adjuster {
+    .title {
+      float: left;
+    }
+    .body {
+      .debug(blue);
+      margin-left: 50px;
+      padding-top: 2px;
+      input {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+  .indicator {
+    .debug();
+    width: 100px;
+    height: 100px;
+    margin: 10px 0 0 50px;
+  }
+}
