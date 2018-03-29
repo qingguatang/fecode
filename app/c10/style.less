@@ -12,12 +12,14 @@ body {
 }
 
 .debug(@color:red) {
-  border: 1px solid @color;
+  // border: 1px solid @color;
 }
 
 .color-mixer {
-  .debug(red);
+  .debug();
+  border: 1px solid #ccc;
   width: 300px;
+  padding: 10px;
 
   .adjuster {
     .title {
@@ -38,6 +40,18 @@ body {
     .debug();
     width: 100px;
     height: 100px;
+  }
+
+  .box {
+    .debug(green);
     margin: 10px 0 0 50px;
+    .clearfix();
+    .indicator {
+      float: left;
+    }
+    .label {
+      float: left;
+      margin-left: 10px;
+    }
   }
 }
