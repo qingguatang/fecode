@@ -1,8 +1,13 @@
 function doYourWork() {
   var bgColor = 'rgb(' + red + ',' + blue + ',' + green + ')';
+
+  var indicator = document.querySelector('.color-mixer .indicator');
   indicator.style.backgroundColor = bgColor;
+
+  var label = document.querySelector('.color-mixer .label');
   label.innerHTML = bgColor;
 }
+
 
 // function doYourWork() {
 //   var r = red.toString(16);

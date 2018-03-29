@@ -1,14 +1,12 @@
 const el = document.querySelector('.color-mixer');
-var indicator = el.querySelector('.indicator');
-var label = el.querySelector('.label');
-
-var red = 0;
-var green = 0;
-var blue = 0;
 
 var redInput = el.querySelector('.red input');
 var greenInput = el.querySelector('.green input');
 var blueInput = el.querySelector('.blue input');
+
+var red = 0;
+var green = 0;
+var blue = 0;
 
 redInput.addEventListener('input', refresh);
 greenInput.addEventListener('input', refresh);
