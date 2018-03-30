@@ -1,28 +1,26 @@
-function doYourWork() {
-  var bgColor = 'rgb(' + red + ',' + blue + ',' + green + ')';
+// alert('hello world');
 
-  var indicator = document.querySelector('.color-mixer .indicator');
-  indicator.style.backgroundColor = bgColor;
+var label = document.querySelector('.color-mixer .label');
 
-  var label = document.querySelector('.color-mixer .label');
-  label.innerHTML = bgColor;
-}
+label.innerHTML = 'rgb(76,36,152)';
+
+var a = document.querySelector('h2');
+a.innerHTML = '我要修改下标题';
+
+var message = 'aaabbb';
+
+// alert(message);
+
+var indicator = document.querySelector('.color-mixer .indicator');
+
+console.log(indicator);
+
+indicator.style.backgroundColor = '#f00';
+// background-color
 
 
-// function doYourWork() {
-//   var r = red.toString(16);
-//   if (r.length == 1) {
-//     r = '0' + r;
-//   }
-//   var g = green.toString(16);
-//   if (g.length == 1) {
-//     g = '0' + g;
-//   }
-//   var b = blue.toString(16);
-//   if (b.length == 1) {
-//     b = '0' + b;
-//   }
-//   var bgColor16 = '#' + r + g + b;
-//   indicator.style.backgroundColor = bgColor16;
-//   label.innerHTML = bgColor16;
-// }
+label.style.fontSize = '20px';
+label.style.fontWeight = 'bold';
+// font-size
+
+a.style.color = 'red';
