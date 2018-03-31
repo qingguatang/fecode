@@ -32,7 +32,7 @@ gulp.task('less', function () {
 
 
 gulp.task('watch', function() {
-  gulp.watch('./app/**/*.less', ['less']);
+  gulp.watch('app/**/*.less', ['less']);
 });
 
 gulp.task('default', ['webserver', 'watch', 'less']);
