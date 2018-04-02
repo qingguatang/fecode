@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>淘宝搜索面板结构参考</title>
+</head>
+<body>
+  <div class="search-panel">
+    <div class="tabs">
+      <ul>
+        <!-- 选中项使用名为active的class -->
+        <li class="active">宝贝</li>
+        <li>天猫</li>
+        <li>店铺</li>
+      </ul>
+    </div>
+
+    <div class="search-bar">
+      <!-- 红色的边框在这个box元素上 -->
+      <div class="box">
+        <!-- 两个图标可做在下面两个span上，使用背景图实现
+        位置可以使用相对于box的绝对定位来完成 -->
+        <span class="search-icon"></span>
+        <span class="photo-icon"></span>
+        <input type="text" class="search-text" />
+      </div>
+      <input type="button" class="search-btn" value="搜索">
+    </div>
+
+    <!-- 这个面板可相对于search-panel做绝对定位 -->
+    <div class="float-panel">
+      <ul>
+        <li>iphone7手机壳 苹果7plus个性</li>
+        <li>iphone7 plus壳</li>
+        <li>iphone6splus全包手机壳</li>
+        <li>iphone6s手机苹果壳</li>
+        <li>iphone 壳 硅胶</li>
+        <li>ipone6s 手机套 硅胶</li>
+        <li>iphone6s plus手机硅胶壳</li>
+        <li>iphone7 plus手机壳 新款</li>
+        <li>iphone nv 手机壳</li>
+        <li>iphone 6s 手机壳</li>
+      </ul>
+    </div>
+    <!--/float-panel-->
+  </div>
+  <!--search-panel--> 
+</body>
+</html>
