@@ -27,5 +27,4 @@ function addText() {
   textInput.value = '';
 }
 
-
 addBtn.addEventListener('click', addText);
