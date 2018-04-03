@@ -1,6 +1,5 @@
 body {
   padding-left: 100px;
-  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -55,5 +54,12 @@ body {
   .preview {
     border: 1px solid #eee;
     min-height: 200px;
+  }
+
+  .font-transform(@scale) {
+    transform: scale(@scale);
+  }
+  body {
+    .font-transform(0.5);
   }
 }

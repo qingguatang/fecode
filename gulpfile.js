@@ -1,10 +1,8 @@
 const gulp = require('gulp');
 const webserver = require('gulp-webserver');
 const less = require('gulp-less')
+const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
-const LessAutoprefix = require('less-plugin-autoprefix');
-
-const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
 
 
 gulp.task('webserver', function() {
@@ -23,9 +21,8 @@ gulp.task('webserver', function() {
 gulp.task('less', function () {
   gulp.src('./app/**/*.less')
     .pipe(sourcemaps.init())
-    .pipe(less({
-      plugins: [autoprefix]
-    }))
+    .pipe(less())
+    .pipe(autoprefixer('last 10 versions', 'ie 9'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./app'));
 });
