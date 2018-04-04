@@ -16,3 +16,20 @@ preview.innerHTML = '<span style="color:' + color +
 
 
     //ES6
+
+var colorInput = document.querySelector('.text-editor .color-input');
+
+var color = colorInput.value;
+
+console.log(color);
+
+var fontSizeSelect = document.querySelector('.text-editor .font-size-select');
+
+var fontSize = fontSizeSelect.value;
+
+console.log(fontSize);
+
+var textInput = document.querySelector('.text-editor .text-input');
+var text = textInput.value;
+
+console.log(text);
