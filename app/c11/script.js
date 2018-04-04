@@ -1,35 +1,44 @@
-console.log('hello');
-
 var preview = document.querySelector('.text-editor .preview');
 
-console.log(preview);
+var colorInput = document.querySelector('.text-editor .color-input');
+var color = colorInput.value;
 
-var color = '#ffffff';
-var bgColor = '#0000ff';
-var fontSize = '28px';
-var text = '这是一段富文本';
-// font-size
+var bgColorInput = document.querySelector('.text-editor .bg-color-input');
+var bgColor = bgColorInput.value;
+
+var fontSizeSelect = document.querySelector('.text-editor .font-size-select');
+var fontSize = fontSizeSelect.value;
+
+var textInput = document.querySelector('.text-editor .text-input');
+var text = textInput.value;
 
 preview.innerHTML = '<span style="color:' + color + 
     '; background: '+bgColor+'; font-size: '+
     fontSize+'">'+text+'</span>';
 
 
-    //ES6
+function log() {
+  console.log('a');
+  console.log('b');
+  console.log('c');
+}
 
+// log();
+// log();
+// log();
+
+var addBtn = document.querySelector('.add-btn');
+
+addBtn.addEventListener('click', log);
+
+// 1
+function setTitleStyle() {
+  var h1 = document.querySelector('h1');
+  var colorInput = document.querySelector('.text-editor .color-input');
+  var color = colorInput.value;
+  h1.style.color = color; //'#f00';
+}
+
+// 2
 var colorInput = document.querySelector('.text-editor .color-input');
-
-var color = colorInput.value;
-
-console.log(color);
-
-var fontSizeSelect = document.querySelector('.text-editor .font-size-select');
-
-var fontSize = fontSizeSelect.value;
-
-console.log(fontSize);
-
-var textInput = document.querySelector('.text-editor .text-input');
-var text = textInput.value;
-
-console.log(text);
+colorInput.addEventListener('change', setTitleStyle);
