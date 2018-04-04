@@ -1,20 +1,32 @@
-var preview = document.querySelector('.text-editor .preview');
+// 1 
 
-var colorInput = document.querySelector('.text-editor .color-input');
-var color = colorInput.value;
+function addText() {
+  var preview = document.querySelector('.text-editor .preview');
 
-var bgColorInput = document.querySelector('.text-editor .bg-color-input');
-var bgColor = bgColorInput.value;
+  var colorInput = document.querySelector('.text-editor .color-input');
+  var color = colorInput.value;
 
-var fontSizeSelect = document.querySelector('.text-editor .font-size-select');
-var fontSize = fontSizeSelect.value;
+  var bgColorInput = document.querySelector('.text-editor .bg-color-input');
+  var bgColor = bgColorInput.value;
 
-var textInput = document.querySelector('.text-editor .text-input');
-var text = textInput.value;
+  var fontSizeSelect = document.querySelector('.text-editor .font-size-select');
+  var fontSize = fontSizeSelect.value;
 
-preview.innerHTML = '<span style="color:' + color + 
-    '; background: '+bgColor+'; font-size: '+
-    fontSize+'">'+text+'</span>';
+  var textInput = document.querySelector('.text-editor .text-input');
+  var text = textInput.value;
+
+  var lastHtml = preview.innerHTML;
+  preview.innerHTML = lastHtml + '<span style="color:' + color + 
+      '; background: '+bgColor+'; font-size: '+
+      fontSize+'">'+text+'</span>';
+
+  textInput.value = '';
+}
+
+// 2
+var addBtn = document.querySelector('.add-btn');
+
+addBtn.addEventListener('click', addText);
 
 
 function log() {
