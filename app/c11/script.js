@@ -52,5 +52,5 @@ function setTitleStyle() {
 }
 
 // 2
-var colorInput = document.querySelector('.text-editor .color-input');
-colorInput.addEventListener('change', setTitleStyle);
+// var colorInput = document.querySelector('.text-editor .color-input');
+// colorInput.addEventListener('change', setTitleStyle);
