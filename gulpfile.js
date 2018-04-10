@@ -1,13 +1,10 @@
 const gulp = require('gulp');
-const webserver = require('gulp-webserver');
-const less = require('gulp-less')
-const autoprefixer = require('gulp-autoprefixer');
-const sourcemaps = require('gulp-sourcemaps');
+const $ = require('gulp-load-plugins')();
 
 
 gulp.task('webserver', function() {
-  gulp.src('./app')
-    .pipe(webserver({
+  return gulp.src('./app')
+    .pipe($.webserver({
       livereload: true,
       open: true,
       directoryListing: {
@@ -19,11 +16,17 @@ gulp.task('webserver', function() {
 
 
 gulp.task('less', function () {
-  gulp.src('./app/**/*.less')
-    .pipe(sourcemaps.init())
-    .pipe(less())
-    .pipe(autoprefixer('last 10 versions', 'ie 9'))
-    .pipe(sourcemaps.write())
+  return gulp.src('./app/**/*.less')
+    .pipe($.plumber({
+      errorHandler (err) {
+        $.notify.onError('Error: <%= error.message %>')(err);
+        this.emit('end');
+      }
+    }))
+    .pipe($.sourcemaps.init())
+    .pipe($.less())
+    .pipe($.autoprefixer('last 10 versions', 'ie 9'))
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest('./app'));
 });
 

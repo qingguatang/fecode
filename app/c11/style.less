@@ -29,7 +29,9 @@ body {
         float: left;
         // 将label文字对齐
         line-height: 25px;
-        margin-right: 10px;
+        &+input,&+select {
+          margin-left: 10px;
+        }
       }
     }
   }

@@ -1,0 +1,46 @@
+@import '../lib/common.less';
+
+.red-packet {
+  .debug();
+  margin: 20px;
+  width: 500px;
+  height: 500px;
+
+  .label {
+    margin: 10px;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .progress {
+    margin: 50px;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 3px;
+
+    .value {
+      background: #2185d0;
+      height: 12px;
+      width: 20%;
+      border-radius: 3px;
+    }
+  }
+
+  .btn {
+    display: block;
+    background: #000;
+    width: 200px;
+    height: 200px;
+    margin: 100px auto;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 60px;
+    outline: none;
+    &:hover {
+      background: rgba(0,0,0,0.9);
+    }
+    &:active {
+      background: rgba(0,0,0,0.8);
+    }
+    cursor: pointer;
+  }
+}
