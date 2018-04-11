@@ -27,7 +27,7 @@
             <option value="16px">16px</option>
             <option value="18px">18px</option>
             <option value="20px">20px</option>
-            <option value="28px">28px</option>
+            <option value="28px" selected>28px</option>
             <option value="40px">40px</option>
           </select>
         </div>
@@ -36,15 +36,13 @@
       <div class="form-group">
         <div class="field">
           <label>
-            <input class="bold-checkbox" type="checkbox">
+            <input class="bold-checkbox" type="checkbox" value="hello">
             粗体
           </label>
         </div>
         <div class="field">
-          <label>
-            <input class="underline-checkbox" type="checkbox">
-            下划线
-          </label>
+          <input id="underlineCheckbox" class="underline-checkbox" type="checkbox">
+          <label for="underlineCheckbox">下划线</label>
         </div>
       </div>
 
