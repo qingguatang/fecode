@@ -15,18 +15,8 @@ function addText() {
   var textInput = document.querySelector('.text-editor .text-input');
   var text = textInput.value;
 
-  var boldCheckbox = document.querySelector('.text-editor .bold-checkbox');
-  console.log(boldCheckbox.checked);
-
-  var fontWeight = 'normal';
-  if (boldCheckbox.checked) {
-    console.log('bold');
-    fontWeight = 'bold';
-  }
-
   var lastHtml = preview.innerHTML;
   preview.innerHTML = lastHtml + '<span style="color:' + color +
-      '; font-weight: ' + fontWeight +
       '; background: '+bgColor+'; font-size: '+
       fontSize+'">'+text+'</span>';
 
