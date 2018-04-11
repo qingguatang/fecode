@@ -8,10 +8,13 @@ function refreshTime() {
   var second = date.getSeconds();
 
   // 如何转换成2位，不够前面加0。
-  var time = hour + ':' + minute + ':' + second;
+  var time = h(hour) + ':' + h(minute) + ':' + h(second);
   textClock.innerHTML = time; //'20:20:00';
 }
 
+function h(v) {
+  return ('' + v).padStart(2, '0');
+}
 
 refreshTime();
 setInterval(refreshTime, 1000);
