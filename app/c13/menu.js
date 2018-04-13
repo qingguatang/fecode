@@ -9,6 +9,7 @@ function initMenu() {
   for (var i = 0; i < lis.length; i++) {
     // 如果循环里面有处理事件
     // 就把它放到旁边的函数中
+    // 学写代码的诀窍就是找出模式，然后使用套路解决
     addEvent(lis[i]);
   }
 
