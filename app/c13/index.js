@@ -1,3 +1,4 @@
+var box = document.querySelector('.user-center');
 var title = document.querySelector('.user-center .title');
 var panel = document.querySelector('.user-center .panel');
 
@@ -10,16 +11,28 @@ var panel = document.querySelector('.user-center .panel');
 //   }
 // }
 
-var show = false;
+// var show = false;
+// function togglePanel() {
+//   if (show) {
+//     panel.style.display = 'none';
+//     // show = false;
+//   } else {
+//     panel.style.display = 'block';
+//     // show = true;
+//   }
+//   show = !show;
+// }
+
+
+// 状态的切换
+// 注意class是加在box上的。
+// 这种东西的好处
 function togglePanel() {
-  if (show) {
-    panel.style.display = 'none';
-    // show = false;
+  if (box.classList.contains('active')) {
+    box.classList.remove('active');
   } else {
-    panel.style.display = 'block';
-    // show = true;
+    box.classList.add('active');
   }
-  show = !show;
 }
 
 title.addEventListener('click', togglePanel);
