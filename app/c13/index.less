@@ -4,7 +4,7 @@
   .debug();
   padding: 10px 100px;
 
-  .user-center {
+  .user-center, .user-center-2 {
     .debug();
 
     width: 200px;
@@ -29,14 +29,29 @@
       // 
       display: none;
     }
+
+    &.active {
+      .title {
+        border: 1px solid #000;
+      }
+      .panel {
+        display: block;
+      }
+    }
   }
 
-  .user-center.active .title {
-    border: 1px solid #000;
+  .clearfix();
+  .user-center, .user-center-2 {
+    float: left;
+    margin-right: 20px;
   }
-  .user-center.active .panel {
-    display: block;
-  }
+
+  // .user-center.active .title {
+  //   border: 1px solid #000;
+  // }
+  // .user-center.active .panel {
+  //   display: block;
+  // }
 }
 
 .page-header {
