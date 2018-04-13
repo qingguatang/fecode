@@ -32,7 +32,7 @@ body {
 .red-packet .progress .bar {
   background: #2185d0;
   height: 12px;
-  width: 50%;
+  width: 0%;
   -webkit-border-radius: 3px;
           border-radius: 3px;
 }
