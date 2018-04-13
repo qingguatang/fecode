@@ -1,4 +1,4 @@
-function initMenu() {
+function initMenuEvent() {
   // var li = document.querySelector('.menu li');
   // console.log(li);
   var lis = document.querySelectorAll('.menu li');
@@ -27,4 +27,27 @@ function initMenu() {
 }
 
 
-initMenu();
+function initMenuItems() {
+  console.log('init');
+  // 字符串的拼装
+  var menu = document.querySelector('.menu');
+  var html = '<ul>';
+  // html += '<li class="red">Red</li>';
+  // html += '<li class="orange">Orange</li>';
+  // html += '<li class="yellow">Yellow</li>';
+  // html += '<li class="olive">Olive</li>';
+  // html += '<li class="green">Green</li>';
+  // html += '<li class="teal">Teal</li>';
+
+  var list = ['Red', 'Orange', 'Yellow', 'Olive', 'Green', 'Teal'];
+  for (var i = 0; i < list.length; i++) {
+    var cls = list[i].toLowerCase();
+    html += '<li class="'+cls+'">'+list[i]+'</li>'
+  }
+
+  html += '</ul>'
+  menu.innerHTML = html;
+}
+
+initMenuItems();
+initMenuEvent();
