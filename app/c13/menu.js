@@ -47,7 +47,10 @@ function initMenuItems() {
 
   html += '</ul>'
   menu.innerHTML = html;
+
+  // DOM操作留到下一讲
 }
+
 
 initMenuItems();
 initMenuEvent();
