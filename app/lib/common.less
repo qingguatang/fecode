@@ -2,6 +2,14 @@
   border: 1px solid @color;
 }
 
+.clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
 // css reset
 
 body, ul, li {
