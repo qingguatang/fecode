@@ -1,3 +1,4 @@
+const pathUtil = require('path');
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 
@@ -6,7 +7,7 @@ gulp.task('webserver', function() {
   return gulp.src('./app')
     .pipe($.webserver({
       livereload: true,
-      open: true,
+      // open: true,
       directoryListing: {
         enable:true,
         path: 'app'
@@ -27,7 +28,7 @@ gulp.task('less', function () {
     .pipe($.less())
     .pipe($.autoprefixer('last 10 versions', 'ie 9'))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('./app'));
+    .pipe(gulp.dest('./app'))
 });
 
 

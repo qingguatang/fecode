@@ -1,0 +1,123 @@
+@import '../lib/common.less';
+
+
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+h1.title {
+  padding: 0;
+  margin: 0;
+  color: rgba(175, 47, 47, 0.15);
+  font-size: 100px;
+  text-align: center;
+}
+
+.todos {
+  width: 550px;
+  margin: 0 auto;
+  border: 1px solid #efefef;
+
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+      0 25px 50px 0 rgba(0, 0, 0, 0.1);
+
+  .header {
+    padding: 16px;
+    .clearfix();
+  }
+
+  .toggle-all {
+    .btn();
+    float: left;
+    margin-right: 20px;
+    font-size: 30px;
+    color: rgb(115, 115, 115);
+  }
+
+  .input-text {
+    float: left;
+    width: 450px;
+    margin-top: 2px;
+    font-size: 24px;
+    border: 0;
+    color: #4d4d4d;
+    &::placeholder {
+      color: #ddd;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .list {
+    li {
+      .clearfix();
+      padding: 10px 20px 10px 10px;
+      border-bottom: 1px solid #ededed;
+      .toggle {
+        .btn();
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+        font-size: 28px;
+        border: 1px solid #009688;
+        border-radius: 50%;
+      }
+      .title {
+        .debug(blue);
+        float: left;
+        width: 420px;
+        color: #4d4d4d;
+        line-height: 40px;
+        font-size: 28px;
+      }
+      .delete {
+        .btn();
+        float: right;
+        margin-top: 2px;
+        font-size: 28px;
+      }
+    }
+  }
+
+  .footer {
+    .clearfix();
+    padding: 10px;
+
+    >.left {
+      float: left;
+      font-size: 16px;
+      line-height: 32px;
+      margin-right: 20px;
+    }
+    >.main {
+      float: left;
+      font-size: 16px;
+      text-align: center;
+    }
+    >.right {
+      float: right;
+    }
+
+    button {
+      .btn();
+      margin: 0 8px;
+      font-size: 16px;
+
+      &.active {
+        border: 1px solid #fc8787;
+        padding: 6px 12px;
+        border-radius: 5px;
+      }
+    }
+
+    .clear-completed {
+      padding: 7px 0;
+      text-decoration: underline;
+    }
+  }
+}

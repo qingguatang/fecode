@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TODO List</title>
+  <link rel="stylesheet" href="todo.css">
+  <script src="//at.alicdn.com/t/font_628932_3r33yqr021olayvi.js"></script>
+</head>
+<body>
+  <h1>Hello</h1>
+  <div class="app">
+    <h1 class="title">todos</h1>
+    <div class="todos">
+      <div class="header">
+        <!-- 哪一种方法没学会就用哪一种 -->
+        <button class="toggle-all">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-unfold"></use>
+          </svg>
+        </button>
+        <input type="text" class="input-text" placeholder="What needs to be done?">
+      </div>
+      <div class="body">
+        <ul class="list">
+          <li>
+            <button class="toggle">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-right"></use>
+              </svg>
+            </button>
+            <div class="title">Hello</div>
+            <button class="delete">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="toggle">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-right"></use>
+              </svg>
+            </button>
+            <div class="title">Hello</div>
+            <button class="delete">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="toggle">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-right"></use>
+              </svg>
+            </button>
+            <div class="title">Hello</div>
+            <button class="delete">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="footer">
+        <div class="left">
+          还有 <span class="count">0</span> 项未完成
+        </div>
+        <div class="main">
+          <button class="all">全部</button>
+          <button class="active active">未完成</button>
+          <button class="completed">已完成</button>
+        </div>
+        <div class="right">
+          <button class="clear-completed">清理已完成的项目</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html
