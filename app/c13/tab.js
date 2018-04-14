@@ -18,10 +18,11 @@ function initTab() {
     });
   }
 
+  // 1. 使用CSS把初始状态弄好
+
   // lis[0].click();
   var event = new MouseEvent('click');
   lis[0].dispatchEvent(event);
 }
-
 
 initTab();
