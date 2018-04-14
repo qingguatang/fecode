@@ -20,7 +20,7 @@ function initTab() {
 
   // 1. 使用CSS把初始状态弄好
 
-  // lis[0].click();
+  // 主动触发一个事件
   var event = new MouseEvent('click');
   lis[0].dispatchEvent(event);
 }
