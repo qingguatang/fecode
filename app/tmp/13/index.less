@@ -26,24 +26,31 @@
       background: #fff;
       margin-top: 2px;
 
+      // 
       display: none;
     }
 
     &.active {
+      .title {
+        border: 1px solid #000;
+      }
       .panel {
         display: block;
-      }
-      .title {
-        background: #eee;
       }
     }
   }
 
+  .clearfix();
+  .user-center, .user-center-2 {
+    float: left;
+    margin-right: 20px;
+  }
+
+  // .user-center.active .title {
+  //   border: 1px solid #000;
+  // }
   // .user-center.active .panel {
   //   display: block;
-  // }
-  // .user-center.active .title {
-  //   background: #eee;
   // }
 }
 

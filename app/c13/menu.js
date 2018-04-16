@@ -1,3 +1,12 @@
+initMenu();
+
+
+function initMenu() {
+  initMenuItems();
+  initMenuEvent();
+}
+
+
 function initMenuEvent() {
   // var li = document.querySelector('.menu li');
   // console.log(li);
@@ -50,7 +59,3 @@ function initMenuItems() {
 
   // DOM操作留到下一讲
 }
-
-
-initMenuItems();
-initMenuEvent();

@@ -20,12 +20,15 @@ gulp.task('less', function () {
   return gulp.src('./app/**/*.less')
     .pipe($.plumber({
       errorHandler (err) {
-        $.notify.onError('Error: <%= error.message %>')(err);
+        // $.notify.onError('Error: <%= error.message %>')(err);
+        console.error(err);
         this.emit('end');
       }
     }))
     .pipe($.sourcemaps.init())
-    .pipe($.less())
+    .pipe($.lessDev({
+      env: 'development'
+    }))
     .pipe($.autoprefixer('last 10 versions', 'ie 9'))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('./app'))
