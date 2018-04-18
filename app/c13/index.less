@@ -1,0 +1,54 @@
+@import '../lib/common.less';
+
+.topbar {
+  .debug();
+  padding: 10px 100px;
+
+  .user-center {
+    .debug();
+
+    width: 200px;
+    position: relative;
+
+    .title {
+      cursor: pointer;
+    }
+
+    .panel {
+      position: absolute;
+
+      box-sizing: border-box;
+      width: 100%;
+      padding: 5px 10px;
+
+      // opacity: 0.9;
+      border: 1px solid #e6e6e6;
+      background: #fff;
+      margin-top: 2px;
+
+      display: none;
+    }
+
+    &.active {
+      .panel {
+        display: block;
+      }
+      .title {
+        background: #eee;
+      }
+    }
+  }
+
+  // .user-center.active .panel {
+  //   display: block;
+  // }
+  // .user-center.active .title {
+  //   background: #eee;
+  // }
+}
+
+.page-header {
+  .debug(blue);
+  padding-left: 20px;
+  min-height: 50px;
+}

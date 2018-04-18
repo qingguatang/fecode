@@ -1,5 +1,23 @@
-.debug(@color: red) {
-  border: 1px solid @color;
+.debug(@color: #ff0000) {
+  // border: 1px solid @color;
+}
+
+.btn() {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+.clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }
 
 // css reset
@@ -15,4 +33,5 @@ ul, li {
 
 body {
   font-size: 14px Helvetica,Arial,sans-serif;
+  line-height: 1.5;
 }

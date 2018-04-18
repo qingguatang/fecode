@@ -1,0 +1,34 @@
+@import '../lib/common.less';
+
+body {
+  padding: 20px;
+}
+
+.tab {
+  // .debug();
+
+  width: 500px;
+
+  .navs {
+    .clearfix();
+    li {
+      float: left;
+      padding: 5px 10px;
+      border: 1px solid transparent;
+      margin-bottom: -1px;
+      cursor: pointer;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      &.active {
+        border-color: #ccc #ccc #fff #ccc;
+      }
+    }
+  }
+
+  .pane {
+    padding: 20px 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #ccc;
+  }
+}

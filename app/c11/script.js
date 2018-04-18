@@ -1,7 +1,8 @@
 // 1 
 
 function addText() {
-  var preview = document.querySelector('.text-editor .preview');
+  var editor = document.querySelector('.text-editor');
+  var preview = editor.querySelector('.preview');
 
   var colorInput = document.querySelector('.text-editor .color-input');
   var color = colorInput.value;
