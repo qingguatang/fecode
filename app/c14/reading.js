@@ -10,6 +10,7 @@ initListEvent();
 initUpButtonEvent();
 initDownButtonEvent();
 initDeleteButtonEvent();
+initStorage();
 
 
 function initTextEvent() {
@@ -153,4 +154,26 @@ function indexOf(lis, li) {
 
 function isWord(work) {
   return (/^[-\w]+$/).test(work);
+}
+
+
+function initStorage() {
+  window.addEventListener('beforeunload', function() {
+    var lis = wordsList.querySelectorAll('li');
+    var words = [];
+    for (var i = 0; i < lis.length; i++) {
+      words.push(lis[i].innerHTML);
+    }
+    console.log(words);
+
+    // 把非字符串的东西变成字符串，方便存储
+    var json = JSON.stringify(words);
+    localStorage.setItem('mywords', json);
+  });
+
+  var json = localStorage.getItem('mywords');
+  var words = JSON.parse(json);
+  for (var i = 0; i < words.length; i++) {
+    addNewWord(words[i]);
+  }
 }
