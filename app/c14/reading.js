@@ -2,6 +2,7 @@ var app = document.querySelector('.reading-app');
 
 var text = app.querySelector('.text');
 var articleBody = app.querySelector('.article .body');
+var wordsList = app.querySelector('.words .list');
 
 
 text.addEventListener('blur', function() {
