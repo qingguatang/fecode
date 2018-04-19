@@ -5,6 +5,12 @@ var articleBody = app.querySelector('.article .body');
 
 
 text.addEventListener('blur', function() {
+  renderArticle();
+  handleArticleEvent();
+});
+
+
+function renderArticle() {
   var body = text.value.trim();
   console.log(body);
   if (!body) {
@@ -25,7 +31,20 @@ text.addEventListener('blur', function() {
   }
 
   articleBody.innerHTML = html;
-});
+}
+
+
+function handleArticleEvent() {
+  var spans = articleBody.querySelectorAll('span');
+  for (var i = 0; i < spans.length; i++) {
+    addEvent(i);
+  }
+  function addEvent(index) {
+    spans[index].addEventListener('dblclick', function() {
+      console.log(spans[index]);
+    });
+  }
+}
 
 
 function isWord(work) {
