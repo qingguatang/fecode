@@ -95,20 +95,6 @@ function initUpButtonEvent() {
   var upButton = app.querySelector('.up');
   upButton.addEventListener('click', function() {
     moveItem('up');
-    var li = wordsList.querySelector('.active');
-    if (!li) {
-      return;
-    }
-    
-    var lis = wordsList.querySelectorAll('li');
-
-    var index = indexOf(lis, li);
-    var prev = lis[index - 1];
-    console.log('prev', prev);
-    if (!prev) {
-      return;
-    }
-    li.parentNode.insertBefore(li, prev);
   });
 }
 
@@ -138,10 +124,10 @@ function moveItem(type) {
   // }
 
   var refIndex = type == 'up' ? index - 1 : index + 2;
-  var ref = lis[refIndex];
-  if (ref) {
-    li.parentNode.insertBefore(li, ref);
+  if (refIndex == -1) {
+    return;
   }
+  li.parentNode.insertBefore(li, lis[refIndex]);
 }
 
 
