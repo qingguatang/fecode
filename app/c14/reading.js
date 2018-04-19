@@ -5,10 +5,19 @@ var articleBody = app.querySelector('.article .body');
 var wordsList = app.querySelector('.words .list');
 
 
-text.addEventListener('blur', function() {
-  renderArticle();
-  handleArticleEvent();
-});
+initList();
+handleTextEvent();
+handleUpButtonEvent();
+handleDownButtonEvent();
+handleDeleteButtonEvent();
+
+
+function handleTextEvent() {
+  text.addEventListener('blur', function() {
+    renderArticle();
+    handleArticleEvent();
+  });
+}
 
 
 function renderArticle() {
@@ -74,51 +83,60 @@ function handleNewWordEvent(li) {
 }
 
 
-var lis = wordsList.querySelectorAll('li');
-for (var i = 0; i < lis.length; i++) {
-  handleNewWordEvent(lis[i]);
+function initList() {
+  var lis = wordsList.querySelectorAll('li');
+  for (var i = 0; i < lis.length; i++) {
+    handleNewWordEvent(lis[i]);
+  }
 }
 
 
-var deleteButton = app.querySelector('.remove');
-deleteButton.addEventListener('click', function() {
-  var li = wordsList.querySelector('.active');
-  li.parentNode.removeChild(li);
-});
+function handleDeleteButtonEvent() {
+  var deleteButton = app.querySelector('.remove');
+  deleteButton.addEventListener('click', function() {
+    var li = wordsList.querySelector('.active');
+    li.parentNode.removeChild(li);
+  });
+}
 
 
-var upButton = app.querySelector('.up');
-upButton.addEventListener('click', function() {
-  var li = wordsList.querySelector('.active');
-  if (!li) {
-    return;
-  }
-  
-  var lis = wordsList.querySelectorAll('li');
+function handleUpButtonEvent() {
+  var upButton = app.querySelector('.up');
+  upButton.addEventListener('click', function() {
+    var li = wordsList.querySelector('.active');
+    if (!li) {
+      return;
+    }
+    
+    var lis = wordsList.querySelectorAll('li');
 
-  var index = indexOf(lis, li);
-  var prev = lis[index - 1];
-  console.log('prev', prev);
-  if (!prev) {
-    return;
-  }
-  li.parentNode.insertBefore(li, prev);
-});
+    var index = indexOf(lis, li);
+    var prev = lis[index - 1];
+    console.log('prev', prev);
+    if (!prev) {
+      return;
+    }
+    li.parentNode.insertBefore(li, prev);
+  });
+}
 
-var downButton = app.querySelector('.down');
-downButton.addEventListener('click', function() {
-  var li = wordsList.querySelector('.active');
-  if (!li) {
-    return;
-  }
-  
-  var lis = wordsList.querySelectorAll('li');
 
-  var index = indexOf(lis, li);
-  var next = lis[index + 2];
-  console.log('next', next);
-  li.parentNode.insertBefore(li, next);
-});
+function handleDownButtonEvent() {
+  var downButton = app.querySelector('.down');
+  downButton.addEventListener('click', function() {
+    var li = wordsList.querySelector('.active');
+    if (!li) {
+      return;
+    }
+    
+    var lis = wordsList.querySelectorAll('li');
+
+    var index = indexOf(lis, li);
+    var next = lis[index + 2];
+    console.log('next', next);
+    li.parentNode.insertBefore(li, next);
+  });
+}
 
 
 function indexOf(lis, li) {
