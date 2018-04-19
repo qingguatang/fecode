@@ -5,17 +5,17 @@ var articleBody = app.querySelector('.article .body');
 var wordsList = app.querySelector('.words .list');
 
 
-initList();
-handleTextEvent();
-handleUpButtonEvent();
-handleDownButtonEvent();
-handleDeleteButtonEvent();
+initTextEvent();
+initListEvent();
+initUpButtonEvent();
+initDownButtonEvent();
+initDeleteButtonEvent();
 
 
-function handleTextEvent() {
+function initTextEvent() {
   text.addEventListener('blur', function() {
     renderArticle();
-    handleArticleEvent();
+    initArticleEvent();
   });
 }
 
@@ -44,7 +44,7 @@ function renderArticle() {
 }
 
 
-function handleArticleEvent() {
+function initArticleEvent() {
   var spans = articleBody.querySelectorAll('span');
   for (var i = 0; i < spans.length; i++) {
     addEvent(i);
@@ -68,11 +68,11 @@ function addNewWord(word) {
  
   wordsList.appendChild(li);
 
-  handleNewWordEvent(li);
+  initNewWordEvent(li);
 }
 
 
-function handleNewWordEvent(li) {
+function initNewWordEvent(li) {
   li.addEventListener('click', function() {
     var lis = wordsList.querySelectorAll('li');
     for (var i = 0; i < lis.length; i++) {
@@ -83,26 +83,18 @@ function handleNewWordEvent(li) {
 }
 
 
-function initList() {
+function initListEvent() {
   var lis = wordsList.querySelectorAll('li');
   for (var i = 0; i < lis.length; i++) {
-    handleNewWordEvent(lis[i]);
+    initNewWordEvent(lis[i]);
   }
 }
 
 
-function handleDeleteButtonEvent() {
-  var deleteButton = app.querySelector('.remove');
-  deleteButton.addEventListener('click', function() {
-    var li = wordsList.querySelector('.active');
-    li.parentNode.removeChild(li);
-  });
-}
-
-
-function handleUpButtonEvent() {
+function initUpButtonEvent() {
   var upButton = app.querySelector('.up');
   upButton.addEventListener('click', function() {
+    moveItem('up');
     var li = wordsList.querySelector('.active');
     if (!li) {
       return;
@@ -121,20 +113,45 @@ function handleUpButtonEvent() {
 }
 
 
-function handleDownButtonEvent() {
+function initDownButtonEvent() {
   var downButton = app.querySelector('.down');
   downButton.addEventListener('click', function() {
-    var li = wordsList.querySelector('.active');
-    if (!li) {
-      return;
-    }
-    
-    var lis = wordsList.querySelectorAll('li');
+    moveItem('down');
+  });
+}
 
-    var index = indexOf(lis, li);
-    var next = lis[index + 2];
-    console.log('next', next);
-    li.parentNode.insertBefore(li, next);
+
+function moveItem(type) {
+  var li = wordsList.querySelector('.active');
+  if (!li) {
+    return;
+  }
+  
+  var lis = wordsList.querySelectorAll('li');
+  var index = indexOf(lis, li);
+
+  // var refIndex;
+  // if (type == 'up') {
+  //   refIndex = index - 1;
+  // } else {
+  //   refIndex = index + 2;
+  // }
+
+  var refIndex = type == 'up' ? index - 1 : index + 2;
+  var ref = lis[refIndex];
+  if (ref) {
+    li.parentNode.insertBefore(li, ref);
+  }
+}
+
+
+function initDeleteButtonEvent() {
+  var deleteButton = app.querySelector('.remove');
+  deleteButton.addEventListener('click', function() {
+    var li = wordsList.querySelector('.active');
+    if (li) {
+      li.parentNode.removeChild(li);
+    }
   });
 }
 
