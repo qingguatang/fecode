@@ -11,7 +11,7 @@
 <body>
   <div class="app">
     <h1 class="title">todos</h1>
-    <div class="todos">
+    <div class="todos filter-finished filter-unfinished">
       <div class="header">
         <!-- 哪一种方法没学会就用哪一种 -->
         <button class="toggle-all">
@@ -23,7 +23,7 @@
       </div>
       <div class="body">
         <ul class="list">
-          <li>
+          <li class="finished">
             <button class="toggle">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-right"></use>
@@ -50,6 +50,45 @@
             </button>
           </li>
           <li>
+            <button class="toggle">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-right"></use>
+              </svg>
+            </button>
+            <div class="title">Hello</div>
+            <button class="delete">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="finished">
+            <button class="toggle">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-right"></use>
+              </svg>
+            </button>
+            <div class="title">Hello</div>
+            <button class="delete">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="toggle">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-right"></use>
+              </svg>
+            </button>
+            <div class="title">Hello</div>
+            <button class="delete">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="finished">
             <button class="toggle">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-right"></use>
@@ -70,8 +109,8 @@
         </div>
         <div class="main">
           <button class="all">全部</button>
-          <button class="active active">未完成</button>
-          <button class="completed">已完成</button>
+          <button class="unfinished">未完成</button>
+          <button class="finished">已完成</button>
         </div>
         <div class="right">
           <button class="clear-completed">清理已完成的项目</button>
