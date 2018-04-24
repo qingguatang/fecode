@@ -49,7 +49,7 @@ gulp.task('watch', () => {
 function errorHandler() {
   return $.plumber({
     errorHandler(err) {
-      $.notify.onError('Error: <%= error.message %>')(err);
+      //$.notify.onError('Error: <%= error.message %>')(err);
       this.emit('end');
     }
   });
