@@ -1146,9 +1146,25 @@ gulp-autoprefixer@^5.0.0:
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-less@^4.0.0:
+gulp-babel@^7.0.1:
+  version "7.0.1"
+  resolved "http://registry.npm.taobao.org/gulp-babel/download/gulp-babel-7.0.1.tgz#b9c8e29fa376b36c57989db820fc1c1715bb47cb"
+  dependencies:
+    plugin-error "^1.0.1"
+    replace-ext "0.0.1"
+    through2 "^2.0.0"
+    vinyl-sourcemaps-apply "^0.2.0"
+
+gulp-cached@^1.1.1:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/gulp-cached/download/gulp-cached-1.1.1.tgz#fe7cd4f87f37601e6073cfedee5c2bdaf8b6acce"
+  dependencies:
+    lodash.defaults "^4.2.0"
+    through2 "^2.0.1"
+
+gulp-less-dev@^4.0.0:
   version "4.0.0"
-  resolved "http://registry.npm.taobao.org/gulp-less/download/gulp-less-4.0.0.tgz#3c49deb96bdca913e436921ef792fb4c24296fcd"
+  resolved "http://registry.npm.taobao.org/gulp-less-dev/download/gulp-less-dev-4.0.0.tgz#3d48829e1756c1eb6f4cc0174d1dbcb283e913df"
   dependencies:
     accord "^0.29.0"
     less "2.6.x || ^3.0.0"
@@ -1823,7 +1839,7 @@ lodash.clone@^4.3.2:
   version "4.5.0"
   resolved "http://registry.npm.taobao.org/lodash.clone/download/lodash.clone-4.5.0.tgz#195870450f5a13192478df4bc3d23d2dea1907b6"
 
-lodash.defaults@^4.0.1:
+lodash.defaults@^4.0.1, lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "http://registry.npm.taobao.org/lodash.defaults/download/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
 
@@ -2986,7 +3002,7 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-through2@2.X, through2@^2.0.0, through2@^2.0.3:
+through2@2.X, through2@^2.0.0, through2@^2.0.1, through2@^2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/through2/download/through2-2.0.3.tgz#0004569b37c7c74ba39c43f3ced78d1ad94140be"
   dependencies:
