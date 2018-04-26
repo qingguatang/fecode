@@ -1,9 +1,21 @@
-initTab();
+var tabs = document.querySelectorAll('.tab');
 
-function initTab() {
-  var tab = document.querySelector('.tab');
-  var lis = tab.querySelectorAll('.navs li');
-  var panes = tab.querySelectorAll('.pane');
+initTab(tabs[0]);
+initTab(tabs[1], '.menu li');
+initTab(tabs[2], undefined, '.panel', true);
+
+function initTab(tab, navSelector, paneSelector, autoPlay) {
+  console.log(navSelector);
+  // var tab = document.querySelector('.tab');
+  if (navSelector == undefined) {
+    navSelector = '.navs li';
+  }
+  if (paneSelector == undefined) {
+    paneSelector = '.pane';
+  }
+
+  var lis = tab.querySelectorAll(navSelector);
+  var panes = tab.querySelectorAll(paneSelector);
 
   for (var i = 0; i < lis.length; i++) {
     addEvent(i);
@@ -24,5 +36,11 @@ function initTab() {
   var event = new Event('click');
   // lis[0].dispatchEvent(event);
 
-  tab.querySelector('.navs li.active').dispatchEvent(event);
+  // tab.querySelector('.navs li.active').dispatchEvent(event);
+  for (var i = 0; i < lis.length; i++) {
+    if (lis[i].classList.contains('active')) {
+      lis[i].dispatchEvent(event);
+      break;
+    }
+  }
 }
