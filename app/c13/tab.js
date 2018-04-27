@@ -10,12 +10,14 @@ function initTab(tab, navSelector, paneSelector, autoPlay) {
   // if (navSelector == undefined) {
   //   navSelector = '.navs li';
   // }
-  if (!navSelector) {
-    navSelector = '.navs li';
-  }
-  if (paneSelector == undefined) {
-    paneSelector = '.pane';
-  }
+  // if (!navSelector) {
+  //   navSelector = '.navs li';
+  // }
+  navSelector = navSelector || '.navs li';
+  // if (paneSelector == undefined) {
+  //   paneSelector = '.pane';
+  // }
+  paneSelector = paneSelector || '.pane';
 
   var lis = tab.querySelectorAll(navSelector);
   var panes = tab.querySelectorAll(paneSelector);

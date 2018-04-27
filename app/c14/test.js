@@ -17,4 +17,20 @@ myButton.addEventListener('click', function() {
     return;
   }
 
+  if (num > 10 || num == 0) {
+    console.log('ok');
+  }
 });
+
+function a() {
+  console.log('a');
+  return 0;
+}
+
+function b() {
+  console.log('b');
+  return 'hello';
+}
+
+var ret = a() || b();
+console.log('result', ret);
