@@ -2,12 +2,15 @@ var tabs = document.querySelectorAll('.tab');
 
 initTab(tabs[0]);
 initTab(tabs[1], '.menu li');
-initTab(tabs[2], undefined, '.panel', true);
+initTab(tabs[2], false, '.panel', true);
 
 function initTab(tab, navSelector, paneSelector, autoPlay) {
   console.log(navSelector);
   // var tab = document.querySelector('.tab');
-  if (navSelector == undefined) {
+  // if (navSelector == undefined) {
+  //   navSelector = '.navs li';
+  // }
+  if (!navSelector) {
     navSelector = '.navs li';
   }
   if (paneSelector == undefined) {
