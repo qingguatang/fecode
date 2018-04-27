@@ -1,11 +1,18 @@
 var tabs = document.querySelectorAll('.tab');
 
 initTab(tabs[0]);
-initTab(tabs[1], '.menu li');
-initTab(tabs[2], false, '.panel', true);
+initTab(tabs[1], {navSelector: '.menu li'});
 
-function initTab(tab, navSelector, paneSelector, autoPlay) {
-  console.log(navSelector);
+var options = {
+  navSelector: false,
+  paneSelector: '.panel',
+  autoPlay: true
+};
+initTab(tabs[2], options);
+
+function initTab(tab, options) {
+  options = options || {};
+  console.log(options.navSelector);
   // var tab = document.querySelector('.tab');
   // if (navSelector == undefined) {
   //   navSelector = '.navs li';
@@ -13,11 +20,11 @@ function initTab(tab, navSelector, paneSelector, autoPlay) {
   // if (!navSelector) {
   //   navSelector = '.navs li';
   // }
-  navSelector = navSelector || '.navs li';
+  navSelector = options.navSelector || '.navs li';
   // if (paneSelector == undefined) {
   //   paneSelector = '.pane';
   // }
-  paneSelector = paneSelector || '.pane';
+  paneSelector = options.paneSelector || '.pane';
 
   var lis = tab.querySelectorAll(navSelector);
   var panes = tab.querySelectorAll(paneSelector);
