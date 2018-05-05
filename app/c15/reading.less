@@ -16,7 +16,7 @@
   }
 
   .text {
-    height: 100px;
+    height: 200px;
     margin-bottom: 20px;
   }
 
@@ -29,19 +29,23 @@
   }
 
   .words {
+    margin-bottom: 20px;
     .body {
-      .clearfix();
-      .list {
-        float: left;
-        margin-right: 20px;
-        width: 300px;
+      display: flex;
 
-        height: 400px;
+      min-height: 200px;
+      padding: 10px;
+      border: 1px solid rgba(0,0,0,0.125);
+      border-radius: 0.25rem;
+
+      .list {
+        flex: 1;
+        margin-right: 20px;
         overflow: auto;
       }
+
       .bar {
-        float: left;
-        width: 80px;
+        width: 60px;
         button {
           margin-bottom: 10px;
         }
