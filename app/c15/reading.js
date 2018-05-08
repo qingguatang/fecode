@@ -23,13 +23,13 @@ function initTextEvent() {
 
 function renderArticle() {
   var body = text.value.trim();
-  console.log(body);
+  // console.log(body);
   if (!body) {
     return;
   }
 
   var words = body.split(/\b/);
-  console.log(words);
+  // console.log(words);
 
   var html = '';
   function buildHTML() {
@@ -55,7 +55,7 @@ function initArticleEvent() {
   }
   function addEvent(index) {
     spans[index].addEventListener('dblclick', function() {
-      console.log(spans[index]);
+      // console.log(spans[index]);
       addNewWord(spans[index].innerHTML);
     });
   }
@@ -63,7 +63,7 @@ function initArticleEvent() {
 
 
 function addNewWord(word) {
-  console.log(word);
+  // console.log(word);
   var li = document.createElement('li');
 
   // li.style.background = '#f00'
@@ -167,7 +167,7 @@ function initStorage() {
     for (var i = 0; i < lis.length; i++) {
       words.push(lis[i].innerHTML);
     }
-    console.log(words);
+    // console.log(words);
 
     // 把非字符串的东西变成字符串，方便存储
     var json = JSON.stringify(words);
