@@ -5,15 +5,17 @@ var articleBody = app.querySelector('.article-panel .body');
 var wordsList = app.querySelector('.words-panel .list');
 
 
-initTextEvent();
-initListEvent();
-initUpButtonEvent();
-initDownButtonEvent();
-initDeleteButtonEvent();
-initStorage();
+initApp();
 
 
-function initTextEvent() {
+function initApp() {
+  initArticlePanel();
+  initListPanel();
+  initStorage();
+}
+
+
+function initArticlePanel() {
   text.addEventListener('blur', function() {
     renderArticle();
     initArticleEvent();
@@ -83,11 +85,15 @@ function initNewWordEvent(li) {
 }
 
 
-function initListEvent() {
+function initListPanel() {
   var lis = wordsList.querySelectorAll('li');
   for (var i = 0; i < lis.length; i++) {
     initNewWordEvent(lis[i]);
   }
+
+  initUpButtonEvent();
+  initDownButtonEvent();
+  initDeleteButtonEvent();
 }
 
 
