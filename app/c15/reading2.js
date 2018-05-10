@@ -9,7 +9,7 @@ for (var i = 0; i < list.length; i++) {
 
 
 list.forEach(function(item, index) {
-  console.log(item, index); 
+  // console.log(item, index); 
 });
 
 
