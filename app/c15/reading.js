@@ -23,8 +23,9 @@ function initArticlePanel() {
 }
 
 
+var body = 'hello world';
 function renderArticle() {
-  var body = text.value.trim();
+  // var body = text.value.trim();
   // console.log(body);
   if (!body) {
     return;
@@ -37,9 +38,13 @@ function renderArticle() {
     for (var i = 0; i < words.length; i++) {
       var word = words[i];
       if (isWord(word)) {
-        html = html + '<span>' + word + '</span>';
+        html = html + '<span>' + transform(word) + '</span>';
       } else {
         html = html + word;
+      }
+      function transform(word) {
+        console.log(body);
+        return word.toUpperCase();
       }
     }
     console.log(i, word);
