@@ -35,16 +35,17 @@ function renderArticle() {
   // console.log(words);
   var html = '';
   function buildHTML() {
-    for (var i = 0; i < words.length; i++) {
-      var word = words[i];
+    function transform(word) {
+      console.log(body);
+      return word.toUpperCase();
+    }
+    var i, word;
+    for (i = 0; i < words.length; i++) {
+      word = words[i];
       if (isWord(word)) {
         html = html + '<span>' + transform(word) + '</span>';
       } else {
         html = html + word;
-      }
-      function transform(word) {
-        console.log(body);
-        return word.toUpperCase();
       }
     }
     console.log(i, word);
