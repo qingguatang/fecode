@@ -46,7 +46,6 @@ function renderArticle() {
   }
   buildHTML();
 
-
   articleBody.innerHTML = html;
 }
 
