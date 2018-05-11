@@ -33,17 +33,24 @@ function renderArticle() {
   var words = body.split(/\b/);
   // console.log(words);
   var html = '';
-  for (var i = 0; i < words.length; i++) {
-    var word = words[i];
-    if (isWord(word)) {
-      html = html + '<span>' + word + '</span>';
-    } else {
-      html = html + word;
+  function buildHTML() {
+    for (var i = 0; i < words.length; i++) {
+      var word = words[i];
+      if (isWord(word)) {
+        html = html + '<span>' + word + '</span>';
+      } else {
+        html = html + word;
+      }
     }
+    console.log(i, word);
   }
+  buildHTML();
+
 
   articleBody.innerHTML = html;
 }
+
+// console.log(body);
 
 
 function initArticleEvent() {
