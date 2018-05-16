@@ -11,9 +11,10 @@
     var td = art.closest(input, '.cell');
     art.remove(input);
     td.dataset.value = value;
-    td.innerHTML = getText(value);
+    var text = getText(value);
+    td.innerHTML = text;
     td.classList.remove('active');
-    td.classList.toggle('num', isNum(value));
+    td.classList.toggle('num', isNum(text));
   });
 
   art.on(app, '.cell', 'click', function() {
@@ -66,9 +67,55 @@
 
 
   function doCalc(name, expr) {
+    var column = app.querySelectorAll('thead th').length - 1;
     var parts = expr.split(/\s*,\s*/);
-    console.log(parts);
-    return '';
+    var list = Array.from(app.querySelectorAll('.cell')).map(function(cell) {
+      return cell.dataset.value;
+    });
+    var values = [].concat.apply([], parts.map(function(part) {
+      return getExprValue(list, part, column)
+    }));
+    var fn = Exprs[name];
+    return fn ? fn(values) : '';
+  }
+
+  function getExprValue(list, expr, column) {
+    var reRange = /^(\w+):(\w+)$/
+    var match = reRange.exec(expr);
+    return match ?
+      getValues(list, getRangeIndices(textToIndex(match[1]), textToIndex(match[2])), column) :
+      getValues(list, [textToIndex(expr)])
+  }
+
+
+  function getValues(list, indices, column) {
+    return indices.map(function(index) {
+      var pos = index[0] * column + index[1];
+      return list[pos];
+    });
+  }
+
+  function getRangeIndices(from, to) {
+    var list = [];
+    for (var i = from[0]; i <= to[0]; i++) {
+      for (var j = from[1]; j <= to[1]; j++) {
+        list.push([i, j]);
+      }
+    }
+    return list;
+  }
+
+
+  function textToIndex(text) {
+    var re = /^([A-Z])(\d+)$/;
+    var match = re.exec(text);
+    if (match) {
+      return [
+        parseInt(match[2], 10) - 1,
+        match[1].charCodeAt(0) - 'A'.charCodeAt(0)
+      ];
+    }
+    return false;
   }
 
 
@@ -89,5 +136,30 @@
     for (var i = 0; i < n; i++) {
       fn(i);
     }
+  }
+
+
+  var Exprs = {
+    sum: function(values) {
+      return values.reduce(function(acc, v) {
+        return acc + (parseFloat(v) || 0)
+      }, 0)
+    },
+
+    mean: function(values) {
+      values = values.map(parseFloat).filter(not(Number.isNaN));
+      console.log(values);
+      return values.length > 0 ?
+        values.reduce(function(acc, v) {
+          return acc + v;
+        }, 0) / values.length : 0;
+    }
+  };
+
+
+  function not(f) {
+    return function() {
+      return !f.apply(null, arguments);
+    };
   }
 })();
