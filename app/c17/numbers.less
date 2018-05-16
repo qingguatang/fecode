@@ -16,8 +16,15 @@
   td {
     width: 120px;
     height: 30px;
+    padding: 0 4px;
     border-left: 1px solid rgba(34,35,38,.1);
     border-top: 1px solid rgba(34,35,38,.1);
+    &.num {
+      text-align: right;
+    }
+    &.active {
+      padding: 0;
+    }
   }
   th:first-child,td:first-child {
     border-left: none;
