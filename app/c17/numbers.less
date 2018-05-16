@@ -1,3 +1,6 @@
+*,::before,::after {
+  box-sizing: border-box;
+}
 .numbers {
   table {
     border-collapse: separate;
@@ -5,7 +8,7 @@
     border: 1px solid rgba(34,36,38,.15);
   }
   th {
-    padding: 10px 0;
+    padding: 8px 0;
     border-left: 1px solid rgba(34,36,38,.1);
     font-weight: normal;
   }
@@ -20,5 +23,12 @@
   }
   td:first-child {
     text-align: center;
+  }
+
+  input[type=text] {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }
