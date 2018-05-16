@@ -1,3 +1,6 @@
+// initPage();
+
+(function initPage() {
 var app = document.querySelector('.reading-app');
 
 var text = app.querySelector('.text');
@@ -194,3 +197,5 @@ function initStorage() {
     addNewWord(words[i]);
   }
 }
+
+})()

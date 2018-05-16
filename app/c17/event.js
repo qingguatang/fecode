@@ -1,6 +1,7 @@
-var elms = document.querySelectorAll('*');
+var elms = Array.from(document.querySelectorAll('*'));
+elms.push(window, document);
 
-Array.from(elms).forEach(function(elm) {
+elms.forEach(function(elm) {
   elm.addEventListener('click', function(e) {
     console.log('capture', e.currentTarget);
   }, true);
