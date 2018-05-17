@@ -2,6 +2,8 @@
 
   var reCalc = /^=(\w+)\(([^)]+)\)/;
   var app = document.querySelector('.numbers');
+  var thBox = app.querySelector('thead tr');
+  var trBox = app.querySelector('tbody');
 
   init();
 
@@ -29,6 +31,24 @@
     input.focus();
   });
 
+  art.on(app, '.add-col', 'click', function() {
+    var col = getColNum();
+    var th = document.createElement('th');
+    th.innerHTML = numToChar(col);
+    thBox.appendChild(th);
+    var trs = Array.from(trBox.querySelectorAll('tr'));
+    trs.forEach(function(tr) {
+      var td = document.createElement('td');
+      td.classList.add('cell');
+      tr.appendChild(td);
+    });
+  });
+
+  art.on(app, '.add-row', 'click', function() {
+    var col = getColNum();
+    var row = trBox.querySelectorAll('tr').length;
+    renderRow(row + 1, col);
+  });
 
   function init() {
     var column = 8;
@@ -42,23 +62,23 @@
   function renderHeader(column) {
     var html = range(column)
       .map(function(index) {
-        var v = String.fromCharCode('A'.charCodeAt(0) + index)
-        return '<th>' + v + '</th>'
+        return '<th>' + numToChar(index) + '</th>'
       }).join('');
-    app.querySelector('table thead tr').innerHTML = '<th></th>' + html;
+    thBox.innerHTML = '<th></th>' + html;
   }
 
 
   function renderRow(title, column) {
-    var html = range(column)
-      .map(function(index) {
-        return '<td class="cell"></td>'
-      }).join('');
+    var html = range(column).map(getCellHtml).join('');
     var tr = document.createElement('tr');
     tr.innerHTML = '<td>' + title + '</td>' + html;
-    app.querySelector('table tbody').appendChild(tr);
+    trBox.appendChild(tr);
   }
 
+
+  function getCellHtml() {
+    return '<td class="cell"></td>';
+  }
 
   function getText(value) {
     var match = reCalc.exec(value);
@@ -67,7 +87,7 @@
 
 
   function doCalc(name, expr) {
-    var column = app.querySelectorAll('thead th').length - 1;
+    var column = getColNum();
     var parts = expr.split(/\s*,\s*/);
     var list = Array.from(app.querySelectorAll('.cell')).map(function(cell) {
       return cell.dataset.value;
@@ -105,6 +125,9 @@
     return list;
   }
 
+  function getColNum() {
+    return app.querySelectorAll('thead th').length - 1;
+  }
 
   function textToIndex(text) {
     var re = /^([A-Z])(\d+)$/;
@@ -138,6 +161,10 @@
     }
   }
 
+
+  function numToChar(num) {
+    return String.fromCharCode('A'.charCodeAt(0) + num)
+  }
 
   var Exprs = {
     sum: function(values) {
