@@ -1,0 +1,28 @@
+@import '../lib/common.less';
+
+.clearfix() {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+body {
+  padding: 10px;
+}
+
+.menu {
+  .clearfix();
+  // border: 1px solid #f00;
+  li {
+    float: left;
+    width: 100px;
+    border: 1px solid #000;
+    text-align: center;
+    &.active {
+      background: #000;
+      color: #fff;
+    }
+  }
+}

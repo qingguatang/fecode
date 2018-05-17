@@ -26,9 +26,9 @@ function initArticlePanel() {
 }
 
 
-var body = 'hello world';
+// var body = 'hello world';
 function renderArticle() {
-  // var body = text.value.trim();
+  var body = text.value.trim();
   // console.log(body);
   if (!body) {
     return;
@@ -39,7 +39,7 @@ function renderArticle() {
   var html = '';
   function buildHTML() {
     function transform(word) {
-      console.log(body);
+      // console.log(body);
       return word.toUpperCase();
     }
     var i, word;
@@ -51,7 +51,7 @@ function renderArticle() {
         html = html + word;
       }
     }
-    console.log(i, word);
+    // console.log(i, word);
   }
   buildHTML();
 
