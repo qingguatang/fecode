@@ -13,11 +13,20 @@
     var td = art.closest(input, '.cell');
     art.remove(input);
     td.dataset.value = value;
-    var text = getText(value);
+    renderTd(td);
+
+    Array.from(app.querySelectorAll('.calc')).forEach(renderTd);
+  });
+
+  function renderTd(td) {
+    var value = td.dataset.value;
+    var isCalc = reCalc.test(value);
+    var text = isCalc ? getCalcText(value) : value;
     td.innerHTML = text;
     td.classList.remove('active');
     td.classList.toggle('num', isNum(text));
-  });
+    td.classList.toggle('calc', isCalc);
+  }
 
   art.on(app, '.cell', 'click', function() {
     var td = this;
@@ -80,11 +89,10 @@
     return '<td class="cell"></td>';
   }
 
-  function getText(value) {
+  function getCalcText(value) {
     var match = reCalc.exec(value);
-    return match ? doCalc(match[1], match[2]) : value;
+    return doCalc(match[1], match[2]);
   }
-
 
   function doCalc(name, expr) {
     var column = getColNum();
