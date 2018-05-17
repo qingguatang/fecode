@@ -1,7 +1,21 @@
 *,::before,::after {
   box-sizing: border-box;
 }
+.clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
 .numbers {
+  .clearfix();
+
+  >.body {
+    position: relative;
+    float: left;
+  }
+
   font-size: 20px;
   table {
     border-collapse: separate;
@@ -39,5 +53,84 @@
     margin: 0;
     padding: 0;
     font-size: 16px;
+  }
+
+  .actions {
+    button {
+      position: relative;
+      border: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #bcbcbc;
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    .line-base() {
+      position: absolute;
+      display: block;
+      background: #65a9f3;
+      content: '';
+    }
+
+    .lines() {
+      &::before, &::after {
+        .line-base();
+        width: 12px;
+        height: 1px;
+        top: 50%;
+        left: 5px;
+      }
+      &::before {
+        margin-top: -2px;
+      }
+      &::after {
+        margin-top: 2px;
+      }
+    }
+
+    .add-row {
+      position: absolute;
+      .lines();
+      bottom: -35px;
+      left: 5px;
+    }
+    .add-col {
+      position: absolute;
+      .lines();
+      top: 5px;
+      right: -35px;
+      transform: rotate(90deg);
+    }
+    .reshape {
+      position: absolute;
+      right: -35px;
+      bottom: -35px;
+      &::before {
+        .line-base();
+        width: 10px;
+        height: 1px;
+        right: 6px;
+        bottom: 6px;
+      }
+      &::after {
+        .line-base();
+        width: 1px;
+        height: 10px;
+        right: 6px;
+        bottom: 6px;
+      }
+    }
   }
 }

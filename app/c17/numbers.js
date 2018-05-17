@@ -157,9 +157,9 @@
   };
 
 
-  function not(f) {
+  function not(fn) {
     return function() {
-      return !f.apply(null, arguments);
+      return !fn.apply(null, arguments);
     };
   }
 })();
