@@ -40,7 +40,8 @@ function renderArticle() {
   function buildHTML() {
     function transform(word) {
       // console.log(body);
-      return word.toUpperCase();
+      // return word.toUpperCase();
+      return word;
     }
     var i, word;
     for (i = 0; i < words.length; i++) {
