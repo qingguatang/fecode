@@ -1,18 +1,16 @@
 var elms = Array.from(document.querySelectorAll('*'));
+console.log(elms);
 elms.push(window, document);
 
-elms.forEach(function(elm) {
-  elm.addEventListener('click', function(e) {
-    console.log('capture', e.currentTarget);
-  }, true);
+for (var i = 0; i < elms.length; i++) {
+  elms[i].addEventListener('click', eventHandler, true);
+  elms[i].addEventListener('click', eventHandler2, false);
+}
 
-  elm.addEventListener('click', function(e) {
-    console.log('bubble', e.currentTarget);
-  }, false);
-});
+function eventHandler(e) {
+  console.log('capture', e.currentTarget);
+}
 
-
-// var three = document.querySelector('.three');
-// three.addEventListener('click', function(e) {
-//   e.stopPropagation();
-// }, true);
+function eventHandler2(e) {
+  console.log('bubble', e.currentTarget);
+}
