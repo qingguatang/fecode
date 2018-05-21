@@ -6,5 +6,4 @@
   handle.addEventListener('click', function() {
     popup.classList.toggle('active');
   });
-
 })();

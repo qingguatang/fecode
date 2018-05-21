@@ -1,5 +1,5 @@
 var elms = Array.from(document.querySelectorAll('*'));
-console.log(elms);
+// console.log(elms);
 elms.push(window, document);
 
 for (var i = 0; i < elms.length; i++) {
@@ -14,3 +14,5 @@ function eventHandler(e) {
 function eventHandler2(e) {
   console.log('bubble', e.currentTarget);
 }
+
+
