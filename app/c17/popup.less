@@ -1,0 +1,53 @@
+@import '../lib/common.less';
+
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+body {
+  padding: 20px;
+}
+
+.popup {
+  border: 1px solid orange;
+  position: relative;
+  width: 140px;
+
+  .title {
+    cursor: pointer;
+  }
+
+  .panel {
+    display: none;
+    position: absolute;
+    width: 140px;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    margin-top: 10px;
+
+    li {
+      margin: 10px 10px;
+    }
+
+    z-index: 1;
+  }
+
+  .unpopup-icon {
+    display: none;
+  }
+
+  &.active {
+    .popup-icon {
+      display: none;
+    }
+    .unpopup-icon {
+      display: inline-block;
+    }
+    .panel {
+      display: block;
+    }
+  }
+}
