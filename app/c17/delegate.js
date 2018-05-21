@@ -1,4 +1,5 @@
 var delegate = (function() {
+
   function delegate(element, event, selector, fn) {
     element.addEventListener(event, function(e) {
       var el = closest(e.target, selector, element);
@@ -20,4 +21,4 @@ var delegate = (function() {
   }
 
   return delegate;
-});
+})();
