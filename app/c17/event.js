@@ -15,4 +15,7 @@ function eventHandler2(e) {
   console.log('bubble', e.currentTarget);
 }
 
-
+var three = document.querySelector('.three');
+three.addEventListener('click', function(e) {
+  e.stopPropagation();
+}, true)

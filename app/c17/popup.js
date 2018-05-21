@@ -6,4 +6,11 @@
   handle.addEventListener('click', function() {
     popup.classList.toggle('active');
   });
+
+  document.addEventListener('click', function() {
+    popup.classList.remove('active');
+  });
+  popup.addEventListener('click', function(e) {
+    e.stopPropagation();
+  })
 })();
