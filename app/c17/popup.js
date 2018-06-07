@@ -2,16 +2,20 @@
   var popup = document.querySelector('.popup');
   var handle = popup.querySelector('.handle');
   var panel = popup.querySelector('.panel');
+  var timer;
 
-  handle.addEventListener('click', function() {
-    popup.classList.toggle('active');
+  handle.addEventListener('mouseenter', function() {
+    popup.classList.add('active');
   });
 
-  document.addEventListener('click', function() {
-    popup.classList.remove('active');
+  popup.addEventListener('mouseleave', function() {
+    timer = setTimeout(function() {
+      popup.classList.remove('active');
+    }, 1000);
+    console.log(timer);
   });
 
-  popup.addEventListener('click', function(e) {
-    e.stopPropagation();
-  })
+  popup.addEventListener('mouseenter', function() {
+    clearTimeout(timer)
+  });
 })();
