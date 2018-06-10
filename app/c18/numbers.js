@@ -176,25 +176,25 @@
 
   var Exprs = {
     sum: function(values) {
-      return values.reduce(function(acc, v) {
-        return acc + (parseFloat(v) || 0)
-      }, 0)
+      values = filterNum(values);
+      return sum(values);
     },
 
     mean: function(values) {
-      values = values.map(parseFloat).filter(not(Number.isNaN));
-      console.log(values);
-      return values.length > 0 ?
-        values.reduce(function(acc, v) {
-          return acc + v;
-        }, 0) / values.length : 0;
+      values = filterNum(values);
+      return values.length > 0 ? sum(values) / values.length : 0;
     }
   };
 
+  function filterNum(list) {
+    return list.filter(function(v) {
+      return /^\d+(\.\d+)?$/.test(v);
+    });
+  }
 
-  function not(fn) {
-    return function() {
-      return !fn.apply(null, arguments);
-    };
+  function sum(list) {
+    return list.reduce(function(acc, v) {
+      return acc + (parseFloat(v) || 0);
+    }, 0)
   }
 })();
