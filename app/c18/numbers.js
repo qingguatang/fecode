@@ -151,7 +151,7 @@
 
 
   function isNum(text) {
-    var re = /^\d+$/;
+    var re = /^\d+(\.\d+)?$/;
     return re.test(text);
   }
 
