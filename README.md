@@ -204,10 +204,13 @@
 ### CSS进阶
 
 - [ ] 层叠上下文
-- [ ] 移动端响应式
+- 移动端适配
+  - [ ] media query
+  - [ ] 动态rem
+- 过渡和动画
+- 背景和边框
 - [ ] BFC
 - [ ] IFC
-- [ ] rem
 
 
 ### Javascript入门
@@ -237,15 +240,49 @@
 - [x] 事件代理
 - [ ] 自制delegate库
 - [x] 计时器: setTimeout, setInterval
+- [x] localStorage
+- [ ] URL
+- [ ] Ajax
+- [ ] cookie操作
 
-#### 设计和技巧
+
+### 设计和技巧
 
 - [x] 设计：状态和行为的表达
 - [x] 设计：使用函数封装组件
 - [x] 好代码的逻辑：函数短小
 - [x] 原则：DRY
 
+
 ### Javascript进阶
+
+- 模块化
+- 名字空间
+  - webpack
+  - 异步加载器
+  - AMD/CMD
+- 数据表达和处理
+  - 列表推导
+- 性能相关
+  - 资源加载
+- 函数进阶
+  - this
+  - bind
+  - call/apply
+- 异常处理
+  - try catch
+  - 使用原则
+- 函数式编程
+  - 高阶函数
+  - 柯里化
+  - pointless
+- 面向对象基础
+  - 原型链
+  - new
+  - 继承
+- 面向对象设计
+  - 原则
+  - 模式
 
 
 ### ES6/ES7
@@ -297,11 +334,40 @@
 - [ ] Proxy
 
 
-
 ### NodeJS
+
+- 模块
+  - commonjs
+  - package
+- 文件操作
+- 实现命令行工具
+- gulp脚本
+- 异步操作
+- HTTP基础
+- KOA基础
+- 实现路由
+- 渲染模板
+- 处理表单数据
+- 文件上传
+- Session
+- 操作数据库
+- sequelizejs
+- 应用部署
 
 
 ### React
+
+- [ ] JSX
+- 组件的数据
+  - [ ] props
+  - [ ] state
+- [ ] 生命周期
+- [ ] redux
+- [ ] 单元测试
+- [ ] 高阶组件
+- [ ] 动画
+- [ ] 路由
+- [ ] 同构
 
 
 ### 工具
