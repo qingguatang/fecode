@@ -17,7 +17,7 @@ gulp.task('webserver', () => {
 
 
 gulp.task('less', () => {
-  return gulp.src('./app/**/*.less')
+  return gulp.src('app/**/*.less')
     .pipe(errorHandler())
     .pipe($.cached('less'))
     .pipe($.sourcemaps.init())
@@ -37,13 +37,13 @@ gulp.task('js', () => {
       presets: ['babel-preset-env']
     }))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist'));
 });
 
 
 gulp.task('watch', () => {
-  gulp.watch('app/**/*.less', ['less']);
-  gulp.watch('app/**/*.js', ['js']);
+  gulp.watch('app/**/*.less', gulp.series(['less']));
+  gulp.watch('app/**/*.js', gulp.series(['js']));
 });
 
 
@@ -57,4 +57,4 @@ function errorHandler() {
 }
 
 
-gulp.task('default', ['webserver', 'watch', 'less']);
+gulp.task('default', gulp.parallel(['webserver', 'watch', 'less']));
